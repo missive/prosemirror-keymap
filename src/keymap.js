@@ -82,7 +82,9 @@ export function keydownHandler(bindings) {
   return function(view, event) {
     let name = keyName(event), isChar = name.length == 1 && name != " ", baseName
     let direct = map[modifiers(name, event, !isChar)]
-    if (direct && direct(view.state, view.dispatch, view)) return true
+    let directResult
+
+    if (direct && (directResult = direct(view.state, view.dispatch, view))) return directResult
     if (isChar && (event.shiftKey || event.altKey || event.metaKey) &&
         (baseName = base[event.keyCode]) && baseName != name) {
       let fromCode = map[modifiers(baseName, event, true)]
