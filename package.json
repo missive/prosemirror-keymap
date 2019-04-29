@@ -1,5 +1,5 @@
 {
-  "name": "prosemirror-keymap",
+  "name": "@missive/prosemirror-keymap",
   "version": "1.0.1",
   "description": "Keymap plugin for ProseMirror",
   "main": "dist/keymap.js",
